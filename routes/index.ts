@@ -18,6 +18,7 @@ import {
   findUsers,
   createUser,
   findUserById,
+  updateUser,
 } from "../controllers/UserController";
 
 // import validate register and login
@@ -40,6 +41,9 @@ router.post("/admin/users", verifyToken, validateUser, createUser);
 
 // define route for user by id
 router.get("/admin/users/:id", verifyToken, findUserById);
+
+// define route for user update
+router.put("/admin/users/:id", verifyToken, validateUser, updateUser);
 
 // export router
 export default router;
